@@ -16,7 +16,7 @@ searchForm.addEventListener('submit', (search) => {
 
 async function main() {
     movieLi.innerHTML =  Array(10).fill().map(() => skeletonHTML()).join('')
-    const movies = await fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=7baafd5b&s=${searchValue}`)
+    const movies = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=7baafd5b&s=${searchValue}`)
     const movie = await movies.json()
     movieData = movie
     movieLi.innerHTML = movie.Search.map(result => movieHTML(result)).join('')
